@@ -37,7 +37,7 @@
 			border: 1px solid #000;
 		}
 	</style>
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body onload='document.loginForm.username.focus();'>
 
@@ -57,18 +57,18 @@
 		<form name='loginForm'
 			action="<c:url value='/login' />" method='POST'>
 
-			<table>
-				<tr>
-					<td>User:</td>
+			<table class="table-responsive">
+				<tr >
+					<td>Utilizator:</td>
 					<td><input type='text' name='username'></td>
 				</tr>
 				<tr>
-					<td>Password:</td>
+					<td>Parola:</td>
 					<td><input type='password' name='password' /></td>
 				</tr>
 				<tr>
-					<td colspan='2'><input name="submit" type="submit"
-						value="submit" /></td>
+					<td colspan='2'><input class="btn btn-primary" name="submit" type="submit"
+						value="Login" /></td>
 				</tr>
 			</table>
 

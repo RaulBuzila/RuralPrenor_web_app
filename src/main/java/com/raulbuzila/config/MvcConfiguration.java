@@ -1,9 +1,6 @@
 package com.raulbuzila.config;
 
-import com.raulbuzila.dao.ProductDAO;
-import com.raulbuzila.dao.ProductDAOImpl;
-import com.raulbuzila.dao.ProductTypeDAO;
-import com.raulbuzila.dao.ProductTypeImpl;
+import com.raulbuzila.dao.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -55,4 +52,12 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 	@Bean
 	public ProductTypeDAO getProductTypeDAO(){return new ProductTypeImpl(getDataSource());}
 
+    @Bean
+    public UserProductDAO getUserProductDAO(){return new UserProductImpl(getDataSource());}
+
+    @Bean
+    public UserDAO getUserDAO(){return new UserDAOImpl(getDataSource());}
+
+    @Bean
+    public CommentDAO getCommentDAO(){return new CommentDAOImpl(getDataSource());}
 }

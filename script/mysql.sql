@@ -1,12 +1,13 @@
-
+DROP TABLE IF EXISTS users;
 CREATE  TABLE users (
   username VARCHAR(45) NOT NULL ,
   address VARCHAR(45) NOT NULL ,
   email VARCHAR(45) NOT NULL ,
-  password VARCHAR(45) NOT NULL ,
+  password VARCHAR(60) NOT NULL ,
   enabled TINYINT NOT NULL DEFAULT 1 ,
   PRIMARY KEY (username));
 
+DROP TABLE IF EXISTS user_roles;
 CREATE TABLE user_roles (
   user_role_id int(11) NOT NULL AUTO_INCREMENT,
   username varchar(45) NOT NULL,
@@ -17,10 +18,7 @@ CREATE TABLE user_roles (
   CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username));
 
 
-
-
 -- tables for product, product_type & user_product
-
 DROP TABLE IF EXISTS `product_type`;
 CREATE TABLE `product_type` (
   `id` INT(11) NOT NULL,
@@ -43,9 +41,22 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Table structure for table comment
+--
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment`(
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `content` VARCHAR(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_comment_product_productId` FOREIGN KEY(`productId`) REFERENCES `product`(`product_id`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
 -- Table structure for table user_product
 --
-
 DROP TABLE IF EXISTS `user_product`;
 CREATE TABLE `user_product`(
   `user_username` VARCHAR(45) NOT NULL,
@@ -72,6 +83,7 @@ VALUES ('raul', 'ROLE_USER');
 insert into product_type VALUES(1,"lactate");
 insert into product_type VALUES(2,"fructe");
 insert into product_type VALUES(3,"legume");
+insert into product_type VALUES (4,"alta categorie");
 
 INSERT INTO product (product_name,description,price,productType_id)
 VALUES ("Iaurt cu fructe de padure","Facut dupa o reteta traditionala, recomandam cel mai bun iaurt din Ardeal",10,1);

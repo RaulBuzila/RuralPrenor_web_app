@@ -1,15 +1,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <body>
-	<h1>HTTP Status 403 - Access is denied</h1>
+	<h1>HTTP Status 403 - Accesul este interzis!</h1>
 
 	<c:choose>
 		<c:when test="${empty username}">
-			<h2>You do not have permission to access this page!</h2>
+			<h2>Ne pare rau, nu aveti permisiunea de a accesa aceasta pagina!</h2>
 		</c:when>
 		<c:otherwise>
-			<h2>Username : ${username} <br/>You do not have permission to access this page!</h2>
+			<h2>Utilizator : ${username} <br/>Ne pare rau, nu aveti permisiunea de a accesa aceasta pagina!</h2>
 		</c:otherwise>
+		<p><a href="/" class="btn btn-primary">Inapoi</a></p>
 	</c:choose>
 
 </body>

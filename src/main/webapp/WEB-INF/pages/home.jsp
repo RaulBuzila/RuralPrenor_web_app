@@ -5,72 +5,72 @@
   Time: 7:36 PM
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+  <title>Home page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .carousel-holder{
+      margin-top: 80px;
+    }
+  </style>
 </head>
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="">Platforma RuralPrenor</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="/product">Produse disponibile</a>
-                </li>
-                <li>
-                    <a href="#">Oferte turistice</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
+<!-- Navigation menu --->
+<jsp:include page="menu.jsp"/>
 
 <div class="container">
+    <div class="row carousel-holder">
+      <div class="col-md-8 col-md-offset-2">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <img class="slide-image" src="http://placehold.it/800x300" alt="">
+            </div>
+            <div class="item">
+              <img class="slide-image" src="http://placehold.it/800x300" alt="">
+            </div>
+            <div class="item">
+              <img class="slide-image" src="http://placehold.it/800x300" alt="">
+            </div>
+          </div>
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-12 col-md-offset-1">
+        <div class="col-md-4 row">
+          <form action="/product">
+            <h4><input class="btn btn-primary" type="submit" value="Vezi mai multe"></h4>
+          </form>
+        </div>
+        <div class="col-md-4 row">
+          <form action="register">
+            <h4><input class="btn btn-primary" type="submit" value="Inregistreaza-te pe site"></h4>
+          </form>
+        </div>
+        <div class="col-md-4 row">
+          <form action="login">
+            <h4><input class="btn btn-primary" type="submit" value="Esti deja membru? Login aici"></h4>
+          </form>
+        </div>
+      </div>
+    </div>
 
-
-
-    <form action="#" style="margin-top: 100px;">
-        <h2><input type="submit" value="View more"></h2>
-    </form>
-
-    <form action="register">
-        <h2><input type="submit" value="Register as an entrepreneur"></h2>
-    </form>
-
-    <form action="login">
-        <h2><input type="submit" value="Already a member? Login here"></h2>
-    </form>
-</div>
-
-
-
-
-
-
-
+<!-- Footer -->
+<%@ include file = "footer.jsp" %>
 </body>
 </html>

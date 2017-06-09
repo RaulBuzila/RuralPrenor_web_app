@@ -7,8 +7,7 @@ import com.raulbuzila.model.User;
  */
 
 public interface UserDAO {
-
     public void saveUser(User user);
-
-    public User get(String username);
+    public void saveUserRole(User user);
+    public User getUser(String username);
 }
