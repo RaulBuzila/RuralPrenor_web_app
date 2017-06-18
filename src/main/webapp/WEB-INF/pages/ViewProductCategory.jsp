@@ -10,6 +10,7 @@
 <html>
 <head>
   <title>View Product page</title>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/ViewProductCategory.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -18,12 +19,7 @@
       document.getElementById("logoutForm").submit();
     }
   </script>
-  <!-- For style purpose -->
-  <style>
-    .prod-list,.categories{
-      margin-top: 100px;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -76,6 +72,7 @@
   </div>
   <div class="col-md-9">
     <div class="prod-list row">
+      <h3 class="categoryName"><c:out value="${categoryName}" /></h3>
       <c:forEach var="product" items="${listProduct}" varStatus="status">
         <div class="col-sm-4 col-lg-4 col-md-4">
           <div class="thumbnail">

@@ -2,50 +2,16 @@
 <%@page session="true"%>
 <html>
 <head>
-<title>Login Page</title>
-
-	<link href="${pageContext.request.contextPath}../../../resources/style.css" rel="stylesheet">
-
-	<style>
-		.error {
-			padding: 15px;
-			margin-bottom: 20px;
-			border: 1px solid transparent;
-			border-radius: 4px;
-			color: #a94442;
-			background-color: #f2dede;
-			border-color: #ebccd1;
-		}
-
-		.msg {
-			padding: 15px;
-			margin-bottom: 20px;
-			border: 1px solid transparent;
-			border-radius: 4px;
-			color: #31708f;
-			background-color: #d9edf7;
-			border-color: #bce8f1;
-		}
-
-		#login-box {
-			width: 300px;
-			padding: 20px;
-			margin: 100px auto;
-			background: #fff;
-			-webkit-border-radius: 2px;
-			-moz-border-radius: 2px;
-			border: 1px solid #000;
-		}
-	</style>
+<title>Pagina de autentificare</title>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/login.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body onload='document.loginForm.username.focus();'>
-
-	<h1>Pagina de Login a platformei RuralPrenor </h1>
-
+<div class="container">
+	<h3 class="text-center text-primary">Pagina de autentificare a platformei RuralPrenor </h3>
+	<span><a href="/home"><h3 class="text-left glyphicon glyphicon-circle-arrow-left">Home</h3></a></span>
 	<div id="login-box">
-
-		<h3>Logare pe baza de Username si Parola</h3>
 
 		<c:if test="${not empty error}">
 			<div class="error">${error}</div>
@@ -57,26 +23,20 @@
 		<form name='loginForm'
 			action="<c:url value='/login' />" method='POST'>
 
-			<table class="table-responsive">
-				<tr >
-					<td>Utilizator:</td>
-					<td><input type='text' name='username'></td>
-				</tr>
-				<tr>
-					<td>Parola:</td>
-					<td><input type='password' name='password' /></td>
-				</tr>
-				<tr>
-					<td colspan='2'><input class="btn btn-primary" name="submit" type="submit"
-						value="Login" /></td>
-				</tr>
-			</table>
+				<div class="form-group">
+						<input class="form-control" placeholder="Username" type='text' name='username'>
+				</div>
+				<div class="form-group">
+						<input class="form-control" placeholder="Parola" type='password' name='password' />
+				</div>
+
+				<input class="btn btn-primary btn-block" name="submit" type="submit" value="Login" />
 
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
-
+			<p>Membru nou? <a href="/register" class="">Inregistrare</a></p>
 		</form>
 	</div>
-
+</div>
 </body>
 </html>

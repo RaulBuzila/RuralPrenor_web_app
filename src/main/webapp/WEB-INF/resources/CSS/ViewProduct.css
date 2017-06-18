@@ -1,0 +1,7 @@
+.prod-list,.categories{
+  margin-top: 100px;
+}
+
+.categories a:visited{
+  color:grey;
+}

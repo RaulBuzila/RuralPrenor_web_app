@@ -26,6 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="RuralPrenorApp" target="1.5" />
       <module name="spring-security-loginform-database-annotation" target="1.6" />
     </bytecodeTargetLevel>
   </component>

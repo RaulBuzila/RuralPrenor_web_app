@@ -31,7 +31,7 @@ CREATE TABLE `product_type` (
 --
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
-  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
   `product_name` VARCHAR(255) ,
   `description` VARCHAR(255) NOT NULL,
   `price` FLOAT(11) NOT NULL,
@@ -85,11 +85,11 @@ insert into product_type VALUES(2,"fructe");
 insert into product_type VALUES(3,"legume");
 insert into product_type VALUES (4,"alta categorie");
 
-INSERT INTO product (product_name,description,price,productType_id)
-VALUES ("Iaurt cu fructe de padure","Facut dupa o reteta traditionala, recomandam cel mai bun iaurt din Ardeal",10,1);
+INSERT INTO product (product_id,product_name,description,price,productType_id)
+VALUES (1,"Iaurt cu fructe de padure","Facut dupa o reteta traditionala, recomandam cel mai bun iaurt din Ardeal",10,1);
 
-INSERT INTO product (product_name,description,price,productType_id)
-VALUES ("Mere Golden","Gustul care nu se uita niciodata",3 ,2);
+INSERT INTO product (product_id,product_name,description,price,productType_id)
+VALUES (2,"Mere Golden","Gustul care nu se uita niciodata",3 ,2);
 
-INSERT INTO product (product_name,description,price,productType_id)
-VALUES ("Cartofi albi","Ideali pentru orice tip de reteta, atat la cuptor cat si prajiti", 2,3);
+INSERT INTO product (product_id,product_name,description,price,productType_id)
+VALUES (3,"Cartofi albi","Ideali pentru orice tip de reteta, atat la cuptor cat si prajiti", 2,3);

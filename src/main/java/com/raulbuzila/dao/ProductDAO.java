@@ -9,13 +9,17 @@ import java.util.List;
  * Created by raulbuzila on 4/9/2017.
  */
 public interface ProductDAO {
-    public void saveOrUpdate(Product product);
+  public void save(Product product);
 
-    public List<Product> list();
+  public void edit(Product product);
 
-    public List<Product> listProductByCategory(int productTypeId);
+  public List<Product> list();
 
-    public Product getProductById(int productID);
+  public List<Product> list(String username);
 
-    public void delete(int productID);
+  public List<Product> listProductByCategory(int productTypeId);
+
+  public Product getProductById(int productID);
+
+  public void delete(int productID);
 }

@@ -11,63 +11,57 @@
 <html>
 <head>
     <title>Register to RuralPrenor</title>
-
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/register.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style.css" />" >
 </head>
 <body>
+<div class="container">
+    <h3 class="text-center text-primary">Inregistrare pe platforma RuralPrenor </h3>
+    <span><a href="/home"><h3 class="text-left glyphicon glyphicon-circle-arrow-left">Home</h3></a></span>
 
-    <h1>Inregistrare pe site</h1>
+    <div id="register-box">
 
-    <div class="container col-md-4 col-md-offset-3">
     <form:form class="form-horizontal" action="saveUser" method="POST" modelAttribute="user">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <fieldset>
-            <div class="control-group">
-                <!-- Username -->
-                <form:label path="username" class="control-lab">Nume utilizator:</form:label>
+            <div class="form-group">
                 <div class="controls">
-                    <form:input path="username"/>
+                    <form:input path="username" class="form-control" placeholder="Nume utilizator"/>
                     <p class="help-block">Numele de utilizator poate contine doar litere sau cifre</p>
                 </div>
             </div>
 
-            <div class="control-group">
-                <!-- E-mail -->
-                <form:label path="email" class="control-label">E-mail</form:label>
+            <div class="form-group">
                 <div class="controls">
-                    <form:input path="email"/>
+                    <form:input path="email" class="form-control" placeholder="E-mail" />
                     <p class="help-block">Introduceti o adresa de e-mail valida</p>
                 </div>
             </div>
 
-            <div class="control-group">
-                <!-- Address -->
-                <form:label path="address" class="control-label" >Adresa</form:label>
+            <div class="form-group">
                 <div class="controls">
-                    <form:input path="address"/>
+                    <form:input path="address" class="form-control" placeholder="Adresa" />
                     <p class="help-block">Introduceti adresa dvs. Format preferat: judet,localitate,strada,numar</p>
                 </div>
             </div>
 
-            <div class="control-group">
-                <!-- Password-->
-                <form:label path="password" class="control-label">Parola</form:label>
+            <div class="form-group">
                 <div class="controls">
-                    <form:password path="password"/>
+                    <form:password path="password" class="form-control" placeholder="Parola" />
                     <p class="help-block">Introduceti o parola complexa pentru o securitate mai sporita</p>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
                 <!-- Button -->
                 <div class="controls">
-                    <button class="btn btn-primary">Creeaza cont</button>
+                    <button class="btn btn-primary btn-block">Creeaza cont</button>
                 </div>
             </div>
         </fieldset>
     </form:form>
     </div>
-
+</div>
 </body>
 </html>

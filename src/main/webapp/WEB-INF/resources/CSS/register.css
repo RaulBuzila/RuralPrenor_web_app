@@ -1,0 +1,13 @@
+#register-box{
+  width: 450px;
+  padding: 20px;
+  margin: 40px auto;
+  background: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border: 1px solid #000
+}
+
+.help-block{
+  font-size: 12px;
+}

@@ -46,7 +46,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Vizualizare
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/product">Produse disponibil</a></li>
+                            <li><a href="/product">Produse disponibile</a></li>
                             <li><a href="#">Oferte turistice</a></li>
                         </ul>
                     </li>
@@ -59,6 +59,9 @@
                             <li><a href="#">Gestionare oferte</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
                 </sec:authorize>
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
                     <li>
@@ -67,7 +70,7 @@
                 </sec:authorize>
                 <sec:authorize access="hasRole('ROLE_USER')">
                 <li>
-                    <a href="#">Contul meu</a>
+                    <a href="/account">Contul meu</a>
                 </li>
                 </sec:authorize>
             </ul>
@@ -87,9 +90,13 @@
            value="${_csrf.token}" />
 </form>
 
-<div style="margin-top:200px;" class="col-md-3">
-    <h3>Hello <span id="menu-username"><%=SecurityContextHolder.getContext().getAuthentication().getName()%></span></h3>
-    <sec:authorize access="hasAnyRole()">
+<div class="container" style="margin-top:100px;">
+    <% String loggedUser=SecurityContextHolder.getContext().getAuthentication().getName();
+        session.setAttribute( "loggedUser", loggedUser );
+    %>
+
+    <h3>Hello <span id="menu-username"><%=loggedUser%></span></h3>
+    <sec:authorize access="hasRole('ROLE_USER')">
         <div>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eos est minus necessitatibus nemo, quia recusandae! Accusamus beatae deleniti distinctio eum fuga, in magnam, necessitatibus, neque nesciunt sapiente tempore vitae.
         </div>

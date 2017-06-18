@@ -32,7 +32,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/src/target/SpringSecurity/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/SpringSecurity/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="spring-security-loginform-database-annotation/web/Web" />
     </root>

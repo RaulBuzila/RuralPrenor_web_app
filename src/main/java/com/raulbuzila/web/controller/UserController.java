@@ -34,4 +34,10 @@ public class UserController {
         ModelAndView modelAndView= new ModelAndView("welcome");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/account",method = RequestMethod.GET)
+    public ModelAndView viewAccountDetails(ModelAndView model){
+        model.setViewName("account");
+        return  model;
+    }
 }

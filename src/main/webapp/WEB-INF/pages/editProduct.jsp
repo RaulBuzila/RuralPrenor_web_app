@@ -16,20 +16,15 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>New Product</title>
+  <title>Edit Product</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container" align="center">
-  <h1>Produs nou</h1>
-  <form:form action="saveProduct" method="get" modelAttribute="product">
+  <h1>Produs editat</h1>
+  <form:form action="editingProduct" method="get" modelAttribute="product">
+    <input type="hidden" name="product_id"/>
     <table>
-      <%
-        Random random = new Random();
-        int product_id = random.nextInt(966) + 35;
-      %>
-      <input type="hidden" name="username" value="<%= session.getAttribute("loggedUser") %>">
-      <input type="hidden" name="product_id" value="<%=product_id%>"/>
       <tr>
         <td>Nume:</td>
         <td><form:input type="text" path="product_name"/></td>
@@ -54,8 +49,7 @@
       </tr>
       <tr>
         <td colspan="2" align="center">
-          <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#questionModal">Salveaza
-          </button>
+          <button type="submit" class="btn btn-info btn-lg" data-toggle="modal">Modifica</button>
         </td>
       </tr>
     </table>
