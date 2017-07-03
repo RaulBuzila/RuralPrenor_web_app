@@ -1,0 +1,19 @@
+#create-product {
+  width: 500px;
+  padding: 20px;
+  margin: 50px auto;
+  background: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border: 1px solid gainsboro;
+}
+
+#saveButton{
+  width: 150px;
+  margin-right: 175px;
+  margin-left: 175px;
+}
+
+.form-group{
+  margin-top: 10px;
+}

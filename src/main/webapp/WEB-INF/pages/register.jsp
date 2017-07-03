@@ -21,27 +21,28 @@
     <span><a href="/home"><h3 class="text-left glyphicon glyphicon-circle-arrow-left">Home</h3></a></span>
 
     <div id="register-box">
-
     <form:form class="form-horizontal" action="saveUser" method="POST" modelAttribute="user">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <fieldset>
-            <div class="form-group">
-                <div class="controls">
-                    <form:input path="username" class="form-control" placeholder="Nume utilizator"/>
-                    <p class="help-block">Numele de utilizator poate contine doar litere sau cifre</p>
-                </div>
+
+          <div class="form-group">
+            <div class="controls">
+              <form:input path="username" class="form-control" placeholder="Username" required="true"/>
+              <p class="alert alert-warning">${message}</p>
+              <p class="help-block">Introduceti numele de utilizator dorit</p>
             </div>
+          </div>
 
             <div class="form-group">
                 <div class="controls">
-                    <form:input path="email" class="form-control" placeholder="E-mail" />
+                    <form:input path="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="E-mail" required="true"/>
                     <p class="help-block">Introduceti o adresa de e-mail valida</p>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="controls">
-                    <form:input path="address" class="form-control" placeholder="Adresa" />
+                    <form:input path="address" class="form-control" placeholder="Adresa" required="true"/>
                     <p class="help-block">Introduceti adresa dvs. Format preferat: judet,localitate,strada,numar</p>
                 </div>
             </div>

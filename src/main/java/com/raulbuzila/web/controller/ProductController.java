@@ -1,13 +1,7 @@
 package com.raulbuzila.web.controller;
 
-import com.raulbuzila.dao.CommentDAO;
-import com.raulbuzila.dao.ProductDAO;
-import com.raulbuzila.dao.ProductTypeDAO;
-import com.raulbuzila.dao.UserProductDAO;
-import com.raulbuzila.model.Comment;
-import com.raulbuzila.model.Product;
-import com.raulbuzila.model.ProductType;
-import com.raulbuzila.model.UserProduct;
+import com.raulbuzila.dao.*;
+import com.raulbuzila.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +28,10 @@ public class ProductController {
   ProductTypeDAO productTypeDAO;
   @Autowired
   CommentDAO commentDAO;
+  @Autowired
+  UserDAO userDAO;
+  @Autowired
+  ReviewDAO reviewDAO;
 
   // METHODS
   // INSERT INTO DB Controller
@@ -58,6 +56,7 @@ public class ProductController {
   @RequestMapping(value = "/product", method = RequestMethod.GET)
   public ModelAndView viewProduct(ModelAndView modelAndView) throws IOException {
     List<Product> listProduct = productDAO.list();
+
     modelAndView.addObject("listProduct", listProduct);
     modelAndView.setViewName("ViewProduct");
     return modelAndView;
@@ -101,12 +100,26 @@ public class ProductController {
   public ModelAndView viewProductDetails(HttpServletRequest request) {
     int productID = Integer.parseInt(request.getParameter("id"));
     Product product = productDAO.getProductById(productID);
-    List<Comment> listComment = commentDAO.readAllComments(productID);
+    UserProduct userProduct = userProductDAO.getUserProduct(productID);
+    User user=userDAO.getUser(userProduct.getUser_username());
+    List<Comment> listComment = commentDAO.readAllApprovedComments(productID);
     Comment comment = new Comment();
+    int noOfReviews = 0;
+    double averageReview=reviewDAO.getAverageReview(productID);
+    if(reviewDAO.getNumberOfReviews(productID) >0)
+      noOfReviews=reviewDAO.getNumberOfReviews(productID);
+    int maxReviewNumber =5;
+
+    // add objects to View
     ModelAndView modelAndView = new ModelAndView("productDetails");
+    modelAndView.addObject("userProduct",userProduct);
+    modelAndView.addObject("user",user);
     modelAndView.addObject("product", product);
     modelAndView.addObject("comment", comment);
     modelAndView.addObject("listComment", listComment);
+    modelAndView.addObject("noOfReviews",noOfReviews);
+    modelAndView.addObject("averageReview",averageReview);
+    modelAndView.addObject("maxReviewNumber",maxReviewNumber);
     return modelAndView;
   }
 

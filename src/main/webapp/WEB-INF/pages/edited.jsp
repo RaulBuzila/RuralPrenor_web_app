@@ -11,6 +11,9 @@
   <title>Title</title>
 </head>
 <body>
-<h1>Produsul a fost modifficat</h1>
+<div class="container">
+  <h1>Produsul a fost modifficat</h1>
+  <span><a href="/manageProducts"><h3 class="text-left glyphicon glyphicon-circle-arrow-left">Inapoi</h3></a></span>
+</div>
 </body>
 </html>

@@ -1,37 +1,19 @@
 <%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: raulbuzila
-  Date: 4/10/2017
-  Time: 9:58 PM
+  Date: 6/22/2017
+  Time: 5:25 PM
   To change this template use File | Settings | File Templates.
 --%>
-<html>
-<head>
-  <title>Pagina de gestionare a produselor proprii</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/manageProducts.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-  <script>
-    function formSubmit() {
-      document.getElementById("logoutForm").submit();
-    }
-  </script>
-</head>
-
-<body>
 <!-- For login user -->
 <c:url value="/login?logout" var="logoutUrl" />
-<% String loggedUser=SecurityContextHolder.getContext().getAuthentication().getName();
+<% String loggedUser= SecurityContextHolder.getContext().getAuthentication().getName();
   session.setAttribute( "loggedUser", loggedUser );
 %>
-
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
 
@@ -103,36 +85,3 @@
   <input type="hidden" name="${_csrf.parameterName}"
          value="${_csrf.token}" />
 </form>
-
-
-<h3>Hello <%=session.getAttribute("loggedUser")%>
-</h3>
-<div class="container">
-  <div id="table-container" align="center">
-    <h1>Lista ta de produse</h1>
-    <h3><a class="btn btn-primary btn-sm" href="newProduct">Adauga produs</a></h3>
-    <table class="table table-responsive table-hover" cellpadding="1">
-      <th>Nr</th>
-      <th data-sort="true">Nume</th>
-      <th>Descriere</th>
-      <th>Pret</th>
-      <th>Actiune</th>
-      <c:forEach var="product" items="${listProduct}" varStatus="status">
-        <tr>
-          <td>${status.index + 1}</td>
-          <td>${product.product_name}</td>
-          <td>${product.description}</td>
-          <td>${product.price}</td>
-          <td>
-              <a class="btn btn-info btn-sm btn-actions" href="editProduct?id=${product.product_id}">Editeaza</a>
-              <a class="btn btn-danger btn-sm btn-actions" href="deleteProduct?id=${product.product_id}">Sterge</a>
-          </td>
-
-        </tr>
-      </c:forEach>
-    </table>
-  </div>
-</div>
-<%@ include file="footer.jsp" %>
-</body>
-</html>

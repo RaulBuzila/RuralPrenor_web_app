@@ -7,9 +7,7 @@ public class ProductType {
     private int id;
     private String type;
 
-    public ProductType(){
-
-    }
+    public ProductType(){}
 
     public ProductType(String type){
         this.type=type;

@@ -60,4 +60,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean
     public CommentDAO getCommentDAO(){return new CommentDAOImpl(getDataSource());}
+
+  @Bean
+  public ReviewDAO getReviewDAO(){return new ReviewDAOImpl(getDataSource());}
 }

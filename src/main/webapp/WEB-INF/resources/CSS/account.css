@@ -1,0 +1,19 @@
+#profileNav{
+  float:right;
+}
+
+@media screen and (max-width: 760px){
+  #profileNav{
+    float:left;
+  }
+}
+
+.account-container{
+  margin: 100px auto;
+  width: 400px;
+}
+
+#modifyButton{
+  margin-right: 150px;
+  margin-left: 150px;
+}

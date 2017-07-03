@@ -28,24 +28,38 @@
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
           <div class="item active">
-            <img class="slide-image" src="http://placehold.it/800x300">
+            <img class="slide-image" src="${pageContext.request.contextPath}/resources/images/1.png">
             <div class="carousel-caption">
-              <p>LA is always so much fun!</p>
+              <p>Oua proaspete din inima Ardealului</p>
             </div>
           </div>
           <div class="item">
-            <img class="slide-image" src="http://placehold.it/800x300">
+            <img class="slide-image" src="${pageContext.request.contextPath}/resources/images/2.png">
             <div class="carousel-caption">
-              <p>LA is always so much fun!</p>
+              <p>Produse traditionale oferite de fermieri</p>
             </div>
           </div>
           <div class="item">
-            <img class="slide-image" src="http://placehold.it/800x300">
+            <img class="slide-image" src="${pageContext.request.contextPath}/resources/images/3.png">
             <div class="carousel-caption">
-              <p>LA is always so much fun!</p>
+              <p>Produse din carne ideale pentru gratar</p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="slide-image" src="${pageContext.request.contextPath}/resources/images/4.png">
+            <div class="carousel-caption">
+              <p>Lactate si produse asemanatoare la dispozitia oricui</p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="slide-image" src="${pageContext.request.contextPath}/resources/images/5.png">
+            <div class="carousel-caption">
+              <p>Produse din panificatie</p>
             </div>
           </div>
         </div>
@@ -59,24 +73,19 @@
     </div>
     <div class="col-md-11 col-md-offset-1">
       <div class="col-md-9 col-md-offset-1 row descriptionHome">
-        <%--<form action="/product">--%>
-        <%--<h4><input class="btn btn-primary" type="submit" value="Vezi mai multe"></h4>--%>
-        <%--</form>--%>
-        <p><span class="text-uppercase">Platforma Ruralprenor</span> s-a nascut din dorinta de a promova antreprenorii din zona de Nord a judetului Harghita.</p>
-        <p> Produsele pe care le vei gasi in cadrul aceste platforme sunt rezultatul muncii unor oameni simpli,harnici,talentati si iubitori de natura.</p>
-        <p>Fie ca este vorba de produse provenite din carne,lactate, fructe, legume ,dulceturi sau alte servicii oferite, ai gasit locul perfect.</p>
-        <p>Daca ti-am starnit interesul, mai multe produse poti vedea aici:<a href="/product"></a></p>
+        <h3 class="text-primary">Scurta descriere</h3>
+        <p class="text-justify"><span class="text-uppercase"><b>Platforma Ruralprenor</b></span> s-a nascut din dorinta de a promova antreprenorii din zona de Nord a judetului Harghita.Produsele pe care le vei gasi in cadrul aceste platforme sunt rezultatul muncii unor oameni simpli,harnici,talentati si iubitori de natura.</p>
+        <p class="text-justify">Fie ca este vorba de produse provenite din carne,lactate, fructe, legume ,dulceturi sau alte servicii oferite, ai gasit locul perfect. Daca ti-am starnit interesul, mai multe produse poti vedea in link-ul asociat: <a href="/product" class="btn btn-link btn-md">Click aici</a></p>
       </div>
-      <%--<div class="col-md-4 row">--%>
-        <%--<form action="register">--%>
-          <%--<h4><input class="btn btn-primary" type="submit" value="Inregistreaza-te pe site"></h4>--%>
-        <%--</form>--%>
-      <%--</div>--%>
-      <%--<div class="col-md-4 row">--%>
-        <%--<form action="login">--%>
-          <%--<h4><input class="btn btn-primary" type="submit" value="Esti deja membru? Login aici"></h4>--%>
-        <%--</form>--%>
-      <%--</div>--%>
+      <div class="col-md-9 col-md-offset-1 row descriptionHome">
+        <h3 class="text-primary">Inregistrare</h3>
+        <p class="text-justify"><span class="text-uppercase"><b>Platforma Ruralprenor</b></span> este deschisa oricarei persoane care doreste sa-si promoveze afacerea prin produsele proprii sau serviciile hoteliere oferite.</p>
+        <p class="text-justify"> Inregistrarea pe platforma este destul de facila, nefiind nevoie de confirmari suplimentare. Doar 2 pasi de despart de promovarea afacerii tale in mediul online. Daca te consideri un antreprenor, iti poti crea cont rapid:  <a href="/register" class="btn btn-link btn-md">Click aici</a></p>
+      </div>
+      <div class="col-md-9 col-md-offset-1 row descriptionHome">
+        <h3 class="text-primary">Autentificare</h3>
+        <p class="text-justify">In cazul in care ai deja un cont creat, ne bucuram ca ai revenit si speram ca iti oferim o experienta cat mai placuta. Te poti autentifica rapid accesand link-ul:  <a href="/login" class="btn btn-link btn-md">Click aici</a></p>
+      </div>
     </div>
   </div>
 

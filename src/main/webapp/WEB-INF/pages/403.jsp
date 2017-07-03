@@ -10,8 +10,8 @@
 		<c:otherwise>
 			<h2>Utilizator : ${username} <br/>Ne pare rau, nu aveti permisiunea de a accesa aceasta pagina!</h2>
 		</c:otherwise>
-		<p><a href="/" class="btn btn-primary">Inapoi</a></p>
-	</c:choose>
 
+	</c:choose>
+	<p><a href="/home" class="btn btn-primary">Inapoi</a></p>
 </body>
 </html>

@@ -12,6 +12,9 @@
 <html>
 
 <head>
+    <title>Pagina utilizator</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/homeUser.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -25,7 +28,9 @@
 <body>
 <!-- For login user -->
 <c:url value="/login?logout" var="logoutUrl" />
-
+<% String loggedUser=SecurityContextHolder.getContext().getAuthentication().getName();
+    session.setAttribute( "loggedUser", loggedUser );
+%>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -37,7 +42,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="">Platforma RuralPrenor</a>
+            <a class="navbar-brand" href="/home">Platforma RuralPrenor</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,25 +65,34 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="/contact">Contact</a>
                     </li>
                 </sec:authorize>
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
                     <li>
-                        <a href="admin.jsp">Admin</a>
+                        <a href="/admin">Admin</a>
                     </li>
                 </sec:authorize>
-                <sec:authorize access="hasRole('ROLE_USER')">
-                <li>
-                    <a href="/account">Contul meu</a>
+            </ul>
+            <sec:authorize access="hasRole('ROLE_USER')">
+                <ul class="nav navbar-nav" id="profileNav">
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <strong><%=loggedUser%></strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <c:if test="${pageContext.request.userPrincipal.name != null}">
+                            <li>
+                                <a href="/account?username=<%=loggedUser%>"><span class="glyphicon glyphicon-edit"></span> Contul meu</a>
+                            </li>
+                            <li><a href="javascript:formSubmit()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                        </c:if>
+                    </ul>
                 </li>
-                </sec:authorize>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <c:if test="${pageContext.request.userPrincipal.name != null}">
-                    <li><a href="javascript:formSubmit()"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
-                </c:if>
-            </ul>
+                </ul>
+            </sec:authorize>
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -91,14 +105,24 @@
 </form>
 
 <div class="container" style="margin-top:100px;">
-    <% String loggedUser=SecurityContextHolder.getContext().getAuthentication().getName();
-        session.setAttribute( "loggedUser", loggedUser );
-    %>
 
-    <h3>Hello <span id="menu-username"><%=loggedUser%></span></h3>
+    <h3>Salut, <span id="menu-username"><%=loggedUser%>!</span></h3>
     <sec:authorize access="hasRole('ROLE_USER')">
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eos est minus necessitatibus nemo, quia recusandae! Accusamus beatae deleniti distinctio eum fuga, in magnam, necessitatibus, neque nesciunt sapiente tempore vitae.
+        <div class="row">
+            Bine ai (re)venit! Ne face mare placere sa lucram impreuna si speram sa ai parte de o experienta cat mai placuta.
+            Meniul de mai sus iti arata facilitatile de care dispui in cadrul platformei, te indemnam sa fii curios.
+        </div>
+
+        <div class="row">
+            In cadrul sectiunii de Vizualizare poti vede ofertele celorlalti antreprenori, cat si pe cea personala.
+            Acolo sunt disponibile cele mai noi Produse sau Oferte turistice, care sunt actualizate zilnic de catre utilizatori.
+            In cadrul sectiunii de Gestionare, poti sa iti administrezi oferta proprie, fie ca este vorba de produse sau ai o anumita oferta turistica disponibila.
+        </div>
+
+        <div class="row">
+            Editarea profilului propriu se face prin deschiderea dropdown-ului de langa numele tau de utilizator.
+            Daca ai orice fel de intrebare formularul si informatiile din pagina Contact iti stau la dispozitie oricand.
+            <span class="text-primary">Nu ezita sa ne contactezi!</span>
         </div>
     </sec:authorize>
     <sec:authorize access="isAnonymous()">

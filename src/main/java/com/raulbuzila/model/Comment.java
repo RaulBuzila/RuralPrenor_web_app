@@ -13,7 +13,7 @@ public class Comment {
 
   // constructors
   public Comment(){}
-  public Comment(int id,String name,String content,int productId){
+  public Comment(int id, String name, String content, int productId){
     this.id=id;
     this.name=name;
     this.content=content;

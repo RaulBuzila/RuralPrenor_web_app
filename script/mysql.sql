@@ -41,7 +41,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Table structure for table comment
+-- Table structure for comment
 --
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment`(
@@ -52,6 +52,19 @@ CREATE TABLE `comment`(
   `productId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_comment_product_productId` FOREIGN KEY(`productId`) REFERENCES `product`(`product_id`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for review
+--
+DROP TABLE IF EXISTS `review`;
+CREATE TABLE `review`(
+  `id` VARCHAR(255) NOT NULL,
+  `score` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_review_product_productId` FOREIGN KEY(`productId`) REFERENCES `product`(`product_id`) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

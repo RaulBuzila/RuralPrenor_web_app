@@ -81,6 +81,11 @@ public class ProductDAOImpl implements ProductDAO {
     return listProduct;
   }
 
+  @Override
+  public List<Product> readAllProducts() {
+    return null;
+  }
+
   private Product CreateProductViewModel(ResultSet resultSet) throws SQLException{
     Product product = new Product();
 

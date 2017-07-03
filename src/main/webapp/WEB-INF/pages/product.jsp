@@ -17,49 +17,58 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>New Product</title>
+
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/product.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container" align="center">
-  <h1>Produs nou</h1>
-  <form:form action="saveProduct" method="get" modelAttribute="product">
-    <table>
-      <%
-        Random random = new Random();
-        int product_id = random.nextInt(966) + 35;
-      %>
-      <input type="hidden" name="username" value="<%= session.getAttribute("loggedUser") %>">
-      <input type="hidden" name="product_id" value="<%=product_id%>"/>
-      <tr>
-        <td>Nume:</td>
-        <td><form:input type="text" path="product_name"/></td>
-      </tr>
-      <tr>
-        <td>Descriere:</td>
-        <td><form:input type="text" path="description"/></td>
-      </tr>
-      <tr>
-        <td>Pret:</td>
-        <td><input type="text" value="${product.price}" name="price"/></td>
-      </tr>
-      <tr>
-        <td>Tip de produs:</td>
-        <td>
-          <form:select path="productType_id">
-            <c:forEach var="prodType" items="${productTypeList}">
-              <form:option value="${prodType.id}">${prodType.type}</form:option>
-            </c:forEach>
-          </form:select>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center">
-          <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#questionModal">Salveaza
-          </button>
-        </td>
-      </tr>
-    </table>
+
+<div class="container" >
+  <h1 class="text-center text-primary">Produs nou</h1>
+  <span><a href="/manageProducts"><h3 class="text-left glyphicon glyphicon-circle-arrow-left">Inapoi</h3></a></span>
+<div id="create-product">
+  <form:form class="form-horizontal" action="saveProduct" method="get" modelAttribute="product">
+    <%
+      Random random = new Random();
+      int product_id = random.nextInt(966) + 35;
+    %>
+    <input type="hidden" name="username" value="<%= session.getAttribute("loggedUser") %>">
+    <input type="hidden" name="product_id" value="<%=product_id%>"/>
+    <div class="form-group">
+      <form:label class="control-label col-sm-2" path="product_name">Nume:</form:label>
+      <div class="col-sm-10">
+        <form:input placeholder="Introduceti numele produsului" class="form-control" type="text" path="product_name"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <form:label class="control-label col-sm-2" path="description">Descriere:</form:label>
+      <div class="col-sm-10">
+        <form:textarea class="form-control" placeholder="Introduceti o descriere pentru produs" type="text" path="description"/>
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <label class="control-label col-sm-2" for="price">Pret:</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" value="${product.price}" name="price"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <form:label class="control-label col-sm-2" path="productType_id">Tip produs:</form:label>
+      <div class="col-sm-10">
+        <form:select class="form-control" path="productType_id">
+          <c:forEach var="prodType" items="${productTypeList}">
+            <form:option value="${prodType.id}">${prodType.type}</form:option>
+          </c:forEach>
+        </form:select>
+      </div>
+    </div>
+
+    <button id="saveButton" type="submit" class="btn btn-primary btn-md" >Salveaza</button>
   </form:form>
+</div>
 </div>
 <%@ include file="footer.jsp" %>
 </body>

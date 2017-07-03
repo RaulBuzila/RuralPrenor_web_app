@@ -1,3 +1,13 @@
+#profileNav{
+  float:right;
+}
+
+@media screen and (max-width: 760px){
+  #profileNav{
+    float:left;
+  }
+}
+
 #table-container{
   margin-top: 100px;
 }

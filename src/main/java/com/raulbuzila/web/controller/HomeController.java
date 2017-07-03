@@ -12,20 +12,19 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
-    public ModelAndView homepage(){
+    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    public ModelAndView homepage() {
 
         ModelAndView model = new ModelAndView();
         model.setViewName("home");
         return model;
     }
 
-    // just for logout
-//    @RequestMapping(value = { "/", "/home" }, method = RequestMethod.POST)
-//    public ModelAndView toHome(){
-//
-//        ModelAndView model = new ModelAndView();
-//        model.setViewName("home");
-//        return model;
-//    }
+    @RequestMapping(value = {"/contact"}, method = RequestMethod.GET)
+    public ModelAndView contactPage() {
+
+        ModelAndView model = new ModelAndView();
+        model.setViewName("contact");
+        return model;
+    }
 }

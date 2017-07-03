@@ -3,7 +3,12 @@
 }
 
 .descriptionHome{
-  margin-top:50px;
+  margin-top:20px;
   border:1px solid darkgrey;
   border-radius:15px;
+}
+
+.slide-image{
+  width: 800px;
+  height: 300px;
 }

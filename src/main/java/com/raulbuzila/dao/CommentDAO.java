@@ -9,7 +9,15 @@ import java.util.List;
 public interface CommentDAO {
   public void saveComment(Comment comment);
 
-  public void deleteComment(Comment comment);
+  public void deleteComment(int commentId);
 
-  public List<Comment> readAllComments(int productId);
+  public List<Comment> readAllApprovedComments(int productId);
+
+  public List<Comment> readAllUnapprovedComments();
+
+  public Comment readCommentById(int comment);
+
+  public void approveComment(int commentId);
+
+  public List<Comment> readAllComments();
 }

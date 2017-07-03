@@ -1,0 +1,30 @@
+.page-content{
+  margin-top: 150px;
+}
+
+.comment-text{
+  margin-top: 20px;
+}
+
+#approvedTable,#allProducts{
+  margin-top: 100px;
+}
+
+.table{
+  margin-top: 30px;
+}
+
+#profileNav{
+  float:right;
+}
+
+@media screen and (max-width: 760px){
+  #profileNav{
+    float:left;
+  }
+}
+
+.row{
+  margin-bottom: 20px;
+}
+
