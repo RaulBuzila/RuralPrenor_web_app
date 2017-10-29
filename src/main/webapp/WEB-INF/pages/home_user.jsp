@@ -12,7 +12,7 @@
 <html>
 
 <head>
-    <title>Pagina utilizator</title>
+    <title>RuralPrenor | Pagina utilizator</title>
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/homeUser.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

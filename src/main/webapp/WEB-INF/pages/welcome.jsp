@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Registration confirm</title>
+    <title>RuralPrenor | Inregistrare</title>
 </head>
 <body>
     <h1>Inregistrarea a avut succes!</h1>

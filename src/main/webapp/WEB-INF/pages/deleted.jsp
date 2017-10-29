@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Sters</title>
+    <title>RuralPrenor | Sters</title>
 </head>
 <body>
     <h1>Produsul a fost sters</h1>

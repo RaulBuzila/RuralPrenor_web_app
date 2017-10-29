@@ -10,7 +10,7 @@
 --%>
 <html>
 <head>
-  <title>Pagina de gestionare a produselor proprii</title>
+  <title>RuralPrenor | Gestionare produse</title>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/manageProducts.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">

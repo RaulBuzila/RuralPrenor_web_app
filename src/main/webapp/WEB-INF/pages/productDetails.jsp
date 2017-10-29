@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Detaliile unui produs</title>
+  <title>RuralPrenor | Detalii produs</title>
 
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/productDetails.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -37,15 +37,15 @@
   <div class="col-md-3">
     <div class="list-group categories">
       <a href="/product" class="list-group-item">Toate produsele</a>
-      <a href="/category?id=1" class="list-group-item">Fructe</a>
-      <a href="/category?id=2" class="list-group-item">Legume</a>
-      <a href="/category?id=3" class="list-group-item">Lactate</a>
+      <a href="/category?id=2" class="list-group-item">Fructe</a>
+      <a href="/category?id=1" class="list-group-item">Lactate</a>
+      <a href="/category?id=3" class="list-group-item">Legume</a>
       <a href="/category?id=4" class="list-group-item">Alte tipuri...</a>
     </div>
   </div>
   <div class="col-md-9">
     <div class="thumbnail productItem">
-      <img class="img-responsive" src="http://placehold.it/800x300">
+      <img class="img-responsive" src="${pageContext.request.contextPath}/resources/images/logoProdus.jpg">
       <div class="caption-full">
         <h4 class="pull-right">${product.price} RON</h4>
         <h4><c:out value="${product.product_name}"/></h4>

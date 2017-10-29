@@ -10,7 +10,7 @@
 --%>
 <html>
 <head>
-    <title>Register to RuralPrenor</title>
+    <title>RuralPrenor | Inregistrare</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/register.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style.css" />" >

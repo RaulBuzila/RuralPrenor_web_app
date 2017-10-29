@@ -6,7 +6,7 @@
 <%@page session="true"%>
 <html>
 <head>
-  <title>Pagina de administrare</title>
+  <title>RuralPrenor | Pagina de administrare</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/admin.css">

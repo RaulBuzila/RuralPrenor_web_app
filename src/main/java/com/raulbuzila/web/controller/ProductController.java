@@ -138,6 +138,7 @@ public class ProductController {
   @RequestMapping(value = "/category", method = RequestMethod.GET)
   public ModelAndView ViewProductsByCategory(HttpServletRequest request) {
     int productTypeId = Integer.parseInt(request.getParameter("id"));
+
     String categoryName = getCategoryName(productTypeId);
     List<Product> listProduct = productDAO.listProductByCategory(productTypeId);
     ModelAndView modelAndView = new ModelAndView("ViewProductCategory");
@@ -150,13 +151,13 @@ public class ProductController {
     String categoryName;
     switch (categoryId) {
       case 1:
-        categoryName = "Fructe";
+        categoryName = "Lactate";
         break;
       case 2:
-        categoryName = "Legume";
+        categoryName = "Fructe";
         break;
       case 3:
-        categoryName = "Lactate";
+        categoryName = "Legume";
         break;
       case 4:
         categoryName = "Alte tipuri de produse";

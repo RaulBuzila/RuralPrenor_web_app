@@ -16,7 +16,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Edit Product</title>
+  <title>RuralPrenor | Editare produs</title>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/editProduct.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>

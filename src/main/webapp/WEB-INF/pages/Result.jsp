@@ -12,7 +12,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <title>Result</title>
+  <title>RuralPrenor | Result</title>
 </head>
 <body>
 <div class="text-center">

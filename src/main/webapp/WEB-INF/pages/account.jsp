@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Contul dvs</title>
+  <title>RuralPrenor | Contul dvs</title>
 
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/account.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

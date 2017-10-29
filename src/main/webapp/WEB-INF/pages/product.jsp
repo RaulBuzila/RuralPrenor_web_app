@@ -16,7 +16,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>New Product</title>
+  <title>RuralPrenor | Produs nou</title>
 
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/product.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -44,7 +44,7 @@
     <div class="form-group">
       <form:label class="control-label col-sm-2" path="description">Descriere:</form:label>
       <div class="col-sm-10">
-        <form:textarea class="form-control" placeholder="Introduceti o descriere pentru produs" type="text" path="description"/>
+        <form:textarea class="form-control" placeholder="Introduceti o descriere pentru produs cat mai succinta" type="text" path="description"/>
       </div>
     </div>
 

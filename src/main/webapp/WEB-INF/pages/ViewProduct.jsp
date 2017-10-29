@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>View Product page</title>
+    <title>RuralPrenor | Produse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/ViewProduct.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" type="text/javascript"></script>
@@ -31,9 +31,9 @@
   <div class="col-md-3">
     <div class="list-group categories">
       <a href="/product" class="list-group-item">Toate produsele</a>
-      <a href="/category?id=1" class="list-group-item">Fructe</a>
-      <a href="/category?id=2" class="list-group-item">Legume</a>
-      <a href="/category?id=3" class="list-group-item">Lactate</a>
+      <a href="/category?id=2" class="list-group-item">Fructe</a>
+      <a href="/category?id=1" class="list-group-item">Lactate</a>
+      <a href="/category?id=3" class="list-group-item">Legume</a>
       <a href="/category?id=4" class="list-group-item">Alte tipuri...</a>
     </div>
   </div>
@@ -42,7 +42,7 @@
       <c:forEach var="product" items="${listProduct}" varStatus="status">
         <div class="col-sm-4 col-lg-4 col-md-4">
           <div class="thumbnail">
-            <img src="http://placehold.it/320x150" alt="">
+            <img src="${pageContext.request.contextPath}/resources/images/produs.jpg">
             <div class="caption">
               <h4 class="pull-right">${product.price} RON</h4>
               <h4 >${product.product_name}</h4>
